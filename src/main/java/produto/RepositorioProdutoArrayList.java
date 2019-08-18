@@ -27,7 +27,7 @@ public class RepositorioProdutoArrayList {
 
 	public RepositorioProdutoArrayList(int size) {
 		super();
-		this.produtos = new ArrayList();
+		this.produtos = new ArrayList<>();
 	}
 
 	/**
@@ -40,8 +40,9 @@ public class RepositorioProdutoArrayList {
 	 * @return
 	 */
 	private int procurarIndice(int codigo) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		return this.produtos.indexOf(new Produto(codigo, null, 0, null));
+
+
 	}
 
 	/**
@@ -51,16 +52,18 @@ public class RepositorioProdutoArrayList {
 	 * @return
 	 */
 	public boolean existe(int codigo) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		boolean existe = false;
+		if(this.procurarIndice(codigo) != -1) {
+			existe = true;
+		}
+		return existe;
 	}
 
 	/**
 	 * Insere um novo produto (sem se preocupar com duplicatas)
 	 */
 	public void inserir(Produto produto) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		produtos.add(produto);
 	}
 
 	/**
@@ -69,8 +72,13 @@ public class RepositorioProdutoArrayList {
 	 * utilizado.
 	 */
 	public void atualizar(Produto produto) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		if(!produtos.contains(produto)) {
+			throw new IllegalArgumentException("Produto não existe");
+		} 
+		produtos.remove(produto);
+		produtos.add(produto);
+		
+		
 	}
 
 	/**
