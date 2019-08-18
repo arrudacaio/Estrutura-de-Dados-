@@ -35,9 +35,35 @@ public class Vetor {
 		return retorno;
 	}
 
+	// o retorno deste método depende do tipo do array.
+	//Busca o elemento através posição passada, se existe, retorna o elemento.
+	public String busca(int posicao) {
+		if (!(posicao >= 0 && posicao < tamanho)) { // Tratando posicao invalida
+			throw new IllegalArgumentException("Posicao inválida");
+		}
+		return this.elementos[posicao];
+	}
+	
+	//Verificar se elemento existe naquela coleção
+	public int buscaElemento(String elemento) {
+		int retorno = -1;
+		for(int i = 0; i< this.tamanho ; i++) {
+			if(this.elementos[i].equals(elemento)) {
+				retorno = i;
+			} 
+		}
+		return retorno;
+		
+	}
+
 	public int tamanho() {
 		return this.tamanho;
 	}
+
+	/*
+	 * Não usamos concatenação pois utilizando o StringBuilder, torna o algoritmo
+	 * mais eficiente
+	 */
 
 	@Override
 	public String toString() {
@@ -49,7 +75,7 @@ public class Vetor {
 		}
 
 		if (this.tamanho > 0) {
-			s.append(this.elementos[this.tamanho-1]);
+			s.append(this.elementos[this.tamanho - 1]);
 		}
 		s.append("]");
 
