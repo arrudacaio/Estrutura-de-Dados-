@@ -13,7 +13,7 @@ public class SelectionSortPassoAPasso {
 
 	}
 
-	public static void selectionSort(int[] v) {
+	private static void selectionSort(int[] v) {
 		for (int i = 0; i < v.length; i++) {
 			int m_inicial = i;
 			for (int j = i + 1; j < v.length; j++) {
@@ -21,7 +21,7 @@ public class SelectionSortPassoAPasso {
 					m_inicial = j;
 				}
 			}
-			// swap, estudar isso
+			// swap
 			int aux = v[i];
 			v[i] = v[m_inicial];
 			v[m_inicial] = aux;
@@ -31,7 +31,7 @@ public class SelectionSortPassoAPasso {
 		}
 	}
 
-	public static int[] transformaEntrada(String entrada) {
+	private static int[] transformaEntrada(String entrada) {
 		String[] modified = entrada.split(" ");
 		int[] v = new int[modified.length];
 		for (int i = 0; i < modified.length; i++) {
