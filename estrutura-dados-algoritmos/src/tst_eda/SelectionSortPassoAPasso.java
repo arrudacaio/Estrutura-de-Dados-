@@ -32,13 +32,14 @@ public class SelectionSortPassoAPasso {
 	}
 
 	private static void swap(int[] v, int i, int j) {
-		int aux = v[i];
+		int aux = v[j];
 		v[j] = v[i];
 		v[i] = aux;
 	}
 	
 	
 	private static int[] transformaEntrada(String entrada) {
+		
 		String[] modified = entrada.split(" ");
 		int[] v = new int[modified.length];
 		for (int i = 0; i < modified.length; i++) {
