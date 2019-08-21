@@ -8,12 +8,12 @@ public class SelectionSortPassoAPasso {
 		Scanner sc = new Scanner(System.in);
 		String entrada = sc.nextLine();
 		int[] lista = transformaEntrada(entrada);
-		SelectionSort(lista);
+		selectionSort(lista);
 		sc.close();
 
 	}
 
-	public static void SelectionSort(int[] v) {
+	public static void selectionSort(int[] v) {
 		for (int i = 0; i < v.length; i++) {
 			int m_inicial = i;
 			for (int j = i + 1; j < v.length; j++) {
