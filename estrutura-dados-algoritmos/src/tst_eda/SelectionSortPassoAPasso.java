@@ -3,6 +3,8 @@ package tst_eda;
 import java.util.*;
 
 public class SelectionSortPassoAPasso {
+	
+	// tirar o public da classe principal para não dar erro SSSSs
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -22,15 +24,20 @@ public class SelectionSortPassoAPasso {
 				}
 			}
 			// swap
-			int aux = v[i];
-			v[i] = v[m_inicial];
-			v[m_inicial] = aux;
+			swap(v, m_inicial, i);
 			if (m_inicial != i) {
 				System.out.println(Arrays.toString(v));
 			}
 		}
 	}
 
+	private static void swap(int[] v, int i, int j) {
+		int aux = v[i];
+		v[j] = v[i];
+		v[i] = aux;
+	}
+	
+	
 	private static int[] transformaEntrada(String entrada) {
 		String[] modified = entrada.split(" ");
 		int[] v = new int[modified.length];
