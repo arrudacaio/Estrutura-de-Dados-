@@ -15,7 +15,6 @@ public class BubbleSort {
 		for (int i = 0; i < v.length - 1; i++) {
 			for (int j = 0; j < v.length - i - 1; j++) {
 				if (v[j] > v[j + 1]) {
-
 					swap(v, j, j + 1);
 
 				}
