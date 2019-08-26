@@ -16,7 +16,7 @@ public class TrocaVizinhos {
 	
 	private static void trocaVizinhos(int[] v) {
 		int tamanho = v.length;
-		if(tamanho % 2 != 0) { // se tamanho for ímpar
+		if(tamanho % 2 != 0) { 
 			tamanho -= 1;
 		}
 
