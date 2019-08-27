@@ -14,15 +14,48 @@ import util.Util;
  */
 public class SimultaneousBubblesort<T extends Comparable<T>> extends AbstractSorting<T> {
 	public void sort(T[] array, int leftIndex, int rightIndex) {
-		for (int i = leftIndex; i <= rightIndex; i++) {
-			for (int j = leftIndex; j < rightIndex; j++) {
-				if (array[j].compareTo(array[j + 1]) > 0) {
-					Util.swap(array, j, j + 1);
+		if (validationInput(array, leftIndex, rightIndex)) {
+			int inicio = leftIndex;
+			int fim = rightIndex;
+
+			if (inicio < rightIndex) {
+				if (array[inicio].compareTo(array[inicio + 1]) > 0) {
+					Util.swap(array, inicio, inicio + 1);
 				}
-				if (array[rightIndex - j].compareTo(array[rightIndex - j - 1]) < 0) {
-					Util.swap(array, rightIndex - j, rightIndex - j - 1);
+
+				inicio++;
+				sort(array, inicio, rightIndex);
+			}
+
+			if (fim > leftIndex) {
+				if (array[fim].compareTo(array[fim - 1]) < 0) {
+					Util.swap(array, fim, fim - 1);
 				}
+
+				fim--;
+				sort(array, leftIndex, fim);
 			}
 		}
+	}
+
+	private boolean validationInput(T[] array, int leftIndex, int rightIndex) {
+		boolean result = true;
+
+		if (array == null) {
+			result = false;
+		}
+		if (array.length == 0) {
+			result = false;
+		}
+		if (leftIndex < 0 || rightIndex < 0) {
+			result = false;
+		}
+		if (leftIndex >= array.length || rightIndex >= array.length) {
+			result = false;
+		}
+		if (leftIndex > rightIndex) {
+			result = false;
+		}
+		return result;
 	}
 }
