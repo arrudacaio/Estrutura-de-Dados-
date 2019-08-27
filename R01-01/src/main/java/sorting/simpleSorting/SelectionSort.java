@@ -12,9 +12,9 @@ public class SelectionSort<T extends Comparable<T>> extends AbstractSorting<T> {
 
 	@Override
 	public void sort(T[] array, int leftIndex, int rightIndex) {
-		boolean result = validationInput(array, leftIndex, rightIndex);
+		boolean valid = validationInput(array, leftIndex, rightIndex);
 
-		if (result) {
+		if (valid) {
 			for (int i = leftIndex; i <= rightIndex; i++) {
 				int menorInicial = i;
 				for (int j = i + 1; j <= rightIndex; j++) {

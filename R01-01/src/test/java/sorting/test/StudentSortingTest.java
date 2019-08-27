@@ -10,6 +10,7 @@ import sorting.AbstractSorting;
 import sorting.simpleSorting.BubbleSort;
 import sorting.simpleSorting.InsertionSort;
 import sorting.simpleSorting.SelectionSort;
+import sorting.variationsOfBubblesort.SimultaneousBubblesort;
 
 public class StudentSortingTest {
 
@@ -44,6 +45,7 @@ public class StudentSortingTest {
 		this.implementation = new BubbleSort<>();
 		this.implementation = new SelectionSort<>();
 		this.implementation = new InsertionSort<>();
+		this.implementation = new SimultaneousBubblesort<>();
 		//Assert.fail("Implementation not provided");
 	}
 

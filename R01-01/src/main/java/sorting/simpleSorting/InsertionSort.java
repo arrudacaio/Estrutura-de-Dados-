@@ -11,15 +11,12 @@ import util.Util;
  */
 public class InsertionSort<T extends Comparable<T>> extends AbstractSorting<T> {
 
-	public static void main(String[] args) {
-
-	}
-
+	
 	@Override
 	public void sort(T[] array, int leftIndex, int rightIndex) {
-		boolean result = validationInput(array, leftIndex, rightIndex);
+		boolean valid = validationInput(array, leftIndex, rightIndex);
 
-		if (result) {
+		if (valid) {
 			T key;
 			for (int i = leftIndex + 1; i <= rightIndex; i++) {
 				key = array[i];
