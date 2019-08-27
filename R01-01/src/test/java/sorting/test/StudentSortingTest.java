@@ -42,6 +42,8 @@ public class StudentSortingTest {
 		// TODO O aluno deve instanciar sua implementação abaixo ao invés de
 		// null
 		this.implementation = new BubbleSort<>();
+		this.implementation = new SelectionSort<>();
+		this.implementation = new InsertionSort<>();
 		//Assert.fail("Implementation not provided");
 	}
 
