@@ -57,3 +57,53 @@
   <level>FINE</level>
   <message>File 118210844-CAIO JOSE DOS SANTOS ARRUDA.zip was received. It was sent by CAIO JOSE DOS SANTOS ARRUDA from IP 192.168.25.7 at 30-08-2019 00*06*19</message>
 </record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-08-30T00:14:39.914-0300</date>
+  <logger>CAIO JOSE DOS SANTOS ARRUDA</logger>
+  <level>FINE</level>
+  <message>File 118210844-CAIO JOSE DOS SANTOS ARRUDA.zip was received. It was sent by CAIO JOSE DOS SANTOS ARRUDA from IP 192.168.25.7 at 30-08-2019 00*14*39</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-08-30T00:15:44.080-0300</date>
+  <logger>CAIO JOSE DOS SANTOS ARRUDA</logger>
+  <level>FINE</level>
+  <message>File 118210844-CAIO JOSE DOS SANTOS ARRUDA.zip was received. It was sent by CAIO JOSE DOS SANTOS ARRUDA from IP 192.168.25.7 at 30-08-2019 00*15*44</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-08-30T00:16:55.788-0300</date>
+  <logger>CAIO JOSE DOS SANTOS ARRUDA</logger>
+  <level>FINE</level>
+  <message>File 118210844-CAIO JOSE DOS SANTOS ARRUDA.zip was received. It was sent by CAIO JOSE DOS SANTOS ARRUDA from IP 192.168.25.7 at 30-08-2019 00*16*55</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-08-30T00:18:54.898-0300</date>
+  <logger>CAIO JOSE DOS SANTOS ARRUDA</logger>
+  <level>FINE</level>
+  <message>File 118210844-CAIO JOSE DOS SANTOS ARRUDA.zip was received. It was sent by CAIO JOSE DOS SANTOS ARRUDA from IP 192.168.25.7 at 30-08-2019 00*18*54</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-08-30T00:20:22.607-0300</date>
+  <logger>CAIO JOSE DOS SANTOS ARRUDA</logger>
+  <level>FINE</level>
+  <message>File 118210844-CAIO JOSE DOS SANTOS ARRUDA.zip was received. It was sent by CAIO JOSE DOS SANTOS ARRUDA from IP 192.168.25.7 at 30-08-2019 00*20*22</message>
+</record>

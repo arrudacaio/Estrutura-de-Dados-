@@ -117,6 +117,7 @@
 							<qualifiedNames>
 								<name>sorting.divideAndConquer.MergeSort</name>
 								<name>sorting.divideAndConquer.QuickSort</name>
+								<!--  >name>sorting.divideAndConquer.threeWayQuicksort</name -->
 								<!-- name>sorting.simpleSorting.SelectionSort</name -->
 							</qualifiedNames>
 						</configuration>
