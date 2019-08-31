@@ -1,7 +1,7 @@
 
 import java.util.*;
-
-public class MergeSort {
+// Tirar public do class para não dar erro no TST
+class MergeSort {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
