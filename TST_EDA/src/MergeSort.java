@@ -1,6 +1,7 @@
-
+/*Tirar public do class para não dar erro no TST
+ * Não esqueça dos import, se não, dará Falha na hora de submeter.
+ * */
 import java.util.*;
-// Tirar public do class para não dar erro no TST
 class MergeSort {
 
 	public static void main(String[] args) {
