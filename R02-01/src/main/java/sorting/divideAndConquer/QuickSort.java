@@ -39,7 +39,7 @@ public class QuickSort<T extends Comparable<T>> extends AbstractSorting<T> {
 			Util.swap(array, leftIndex, inicial);
 			return inicial;
 		}
-		return -1;
+		return -1; 
 	}
 
 	private boolean validacao(T[] array, int leftIndex, int rightIndex) {
