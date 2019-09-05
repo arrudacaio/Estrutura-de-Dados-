@@ -1,5 +1,7 @@
 package sorting.linearSorting;
 
+import java.util.Arrays;
+
 import sorting.AbstractSorting;
 
 /**
@@ -14,28 +16,27 @@ public class CountingSort extends AbstractSorting<Integer> {
 	public void sort(Integer[] array, int leftIndex, int rightIndex) {
 		if (validacao(array, leftIndex, rightIndex)) {
 			// Procurando o K
-			int k = procuraK(array, leftIndex, rightIndex);
-			int[] c = new int[k + 1];
-			int[] b = new int[array.length];
+			Integer k = procuraK(array, leftIndex, rightIndex);
+			Integer[] contador = new Integer[k + 1];
+			Integer[] b = new Integer[array.length];
 
-			for (int i = 0; i < c.length; i++) { // Preenche todos os elementos de C com 0
-				c[i] = 0;
-			}
-
+			Arrays.fill(contador, 0); 
+ 
 			for (int i = leftIndex; i <= rightIndex; i++) { // P1) Contagem de ocorrencia
-				c[array[i]]+=1;
+				contador[array[i]] += 1;
 			}
 
-			for (int i = 1; i < c.length; i++) { // P2) Cumulativa em C
-				c[i] += c[i - 1];
+			for (int i = 1; i < contador.length; i++) { // P2) Cumulativa em C
+				contador[i] += contador[i - 1];
 			}
 
-			for (int i = rightIndex; i >= leftIndex; i--) {
-				b[--c[array[i]]] = array[i]; 
+			for (int i = rightIndex; i >= leftIndex; i--) { 
+				b[contador[array[i]]-1] = array[i];
+				contador[array[i]]--;
 			}
 
-			for (int i = 0; i <= rightIndex - leftIndex; i++) {
-				array[i + leftIndex] = b[i];  
+			for (int i = leftIndex; i <= rightIndex; i++) {
+				array[i] = b[i];
 			}
 
 		}
