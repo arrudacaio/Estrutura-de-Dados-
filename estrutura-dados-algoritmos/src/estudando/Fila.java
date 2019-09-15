@@ -6,8 +6,8 @@ public class Fila {
 	private int fim;
 	private int total;
 
-	public Fila() {
-		this.valores = new int[10];
+	public Fila(int size) {
+		this.valores = new int[size];
 		this.ini = 0;
 		this.fim = 0;
 		this.total = 0;
