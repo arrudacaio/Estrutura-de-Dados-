@@ -59,21 +59,23 @@ public class SingleLinkedListImpl<T> implements LinkedList<T> {
 	}
 
 	@Override
-	public void remove(T element) { // entender!!!
-		if (element != null && !isEmpty()) {
-			if (this.head.getData().equals(element)) {
-				head = head.getNext();
+	public void remove(T element) { // n entendi mt bem
+		if(!isEmpty() && element != null) {
+			if(this.head.getData().equals(element)) { // Caso o primeiro elemento da lista seja o elemento à ser removido.
+				this.head = this.head.getNext();
 			} else {
-				SingleLinkedListNode<T> previous = new SingleLinkedListNode<T>();
 				SingleLinkedListNode<T> aux = getHead();
-				while (!aux.isNIL() && !aux.getData().equals(element)) {
+				SingleLinkedListNode<T> previous = new SingleLinkedListNode<>();
+				while(!aux.isNIL() && aux.getData() != element) {
 					previous = aux;
 					aux = aux.getNext();
+					
 				}
-				if (!aux.isNIL()) {
-					previous.setNext(aux.getNext());
+				if(!aux.isNIL()) {
+					previous.next = aux.next; // aqui acontece de fato a remoção. Pois a ligação faz um "salto"
 				}
 			}
+			
 		}
 	}
 
