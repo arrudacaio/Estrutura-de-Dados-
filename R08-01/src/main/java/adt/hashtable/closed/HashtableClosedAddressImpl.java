@@ -103,8 +103,17 @@ public class HashtableClosedAddressImpl<T> extends AbstractHashtableClosedAddres
 
 	@Override
 	public T search(T element) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		T saida = null;
+		if(element != null) {
+			int index = this.getIndex(element);
+			if(this.table[index] != null) {
+				List<T> lista = (List<T>) this.table[index];
+				if(lista.contains(element)) {
+					saida = lista.get(lista.indexOf(element));
+				}
+			}
+		}
+		return saida;
 	}
 
 	@Override
