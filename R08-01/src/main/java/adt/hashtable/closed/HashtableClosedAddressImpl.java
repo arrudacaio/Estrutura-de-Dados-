@@ -61,8 +61,7 @@ public class HashtableClosedAddressImpl<T> extends AbstractHashtableClosedAddres
 		}
 		return prime;
 	}
-	
-	
+
 	public int getIndex(T element) {
 		int index = 0;
 		if (this.hashFunction instanceof HashFunctionClosedAddress) {
@@ -110,8 +109,21 @@ public class HashtableClosedAddressImpl<T> extends AbstractHashtableClosedAddres
 
 	@Override
 	public int indexOf(T element) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		boolean result = false;
+		int index = this.getIndex(element);
+		if (element != null) {
+			if (this.table[index] != null) {
+				List<T> lista = (List<T>) this.table[index];
+				if(lista.contains(element)) {
+					result = true;
+				}
+			}
+		}
+		if(result) {
+			return index;
+		} else {
+			return -1;
+		}
 	}
 
 }
