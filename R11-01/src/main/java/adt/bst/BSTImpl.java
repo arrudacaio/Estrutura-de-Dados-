@@ -17,8 +17,7 @@ public class BSTImpl<T extends Comparable<T>> implements BST<T> {
 		return root.isEmpty();
 	}
 
-	//BSTNode<T> node
-	
+	// BSTNode<T> node
 
 	@Override
 	public int height() {
@@ -27,38 +26,86 @@ public class BSTImpl<T extends Comparable<T>> implements BST<T> {
 
 	private int height(BSTNode<T> node) {
 		int height = -1;
-		
-		if(!node.isEmpty()) {
-			height = 1 + Math.max(this.height((BSTNode<T>)node.getLeft()), this.height((BSTNode<T>)node.getRight()));
+
+		if (!node.isEmpty()) {
+			height = 1 + Math.max(this.height((BSTNode<T>) node.getLeft()), this.height((BSTNode<T>) node.getRight()));
 		}
 		return height;
-		
+
 	}
-	
+
 	@Override
 	public BSTNode<T> search(T element) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		return recursiveSearch(element, this.root);
+	}
+
+	public BSTNode<T> recursiveSearch(T element, BSTNode<T> node) {
+		if (element != null && !node.isEmpty()) {
+			if (element.compareTo(node.getData()) > 0) {
+				return recursiveSearch(element, (BSTNode<T>) node.getRight());
+			} else if (element.compareTo(node.getData()) < 0) {
+				return recursiveSearch(element, (BSTNode<T>) node.getLeft());
+			} else {
+				return node;
+			}
+		}
+		return new BSTNode();
 	}
 
 	@Override
 	public void insert(T element) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		recursiveInsert(element, this.root);
+	}
+
+	public void recursiveInsert(T element, BSTNode<T> node) {
+		if (element != null) {
+			if (node.isEmpty()) {
+				node.setData(element);
+				node.setLeft(new BSTNode<T>());
+				node.setRight(new BSTNode<T>());
+				node.getLeft().setParent(node);
+				node.getRight().setParent(node);
+			} else {
+				if (element.compareTo(node.getData()) > 0) {
+					recursiveInsert(element, (BSTNode<T>) node.getRight());
+				} else {
+					recursiveInsert(element, (BSTNode<T>) node.getLeft());
+				}
+			}
+		}
 	}
 
 	@Override
 	public BSTNode<T> maximum() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		return recursiveMaximum(this.root);
 	}
+	
+	public BSTNode<T> recursiveMaximum(BSTNode<T> node) {
+		if(node.isEmpty()) {
+			return null;
+		} else if(node.getRight().isEmpty()) {
+			return node;
+		} else {
+			return recursiveMaximum((BSTNode<T>)node.getRight());
+		}
+	}
+	
 
 	@Override
 	public BSTNode<T> minimum() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		return recursiveMinimum(this.root);
 	}
 
+	public BSTNode<T> recursiveMinimum(BSTNode<T> node) {
+		if(node.isEmpty()) {
+			return null;
+		} else if(node.getLeft().isEmpty()) {
+			return node;
+		} else {
+			return recursiveMinimum((BSTNode<T>) node.getLeft());
+		}
+	}
+	
 	@Override
 	public BSTNode<T> sucessor(T element) {
 		// TODO Auto-generated method stub
@@ -96,8 +143,8 @@ public class BSTImpl<T extends Comparable<T>> implements BST<T> {
 	}
 
 	/**
-	 * This method is already implemented using recursion. You must understand
-	 * how it work and use similar idea with the other methods.
+	 * This method is already implemented using recursion. You must understand how
+	 * it work and use similar idea with the other methods.
 	 */
 	@Override
 	public int size() {
@@ -108,8 +155,7 @@ public class BSTImpl<T extends Comparable<T>> implements BST<T> {
 		int result = 0;
 		// base case means doing nothing (return 0)
 		if (!node.isEmpty()) { // indusctive case
-			result = 1 + size((BSTNode<T>) node.getLeft())
-					+ size((BSTNode<T>) node.getRight());
+			result = 1 + size((BSTNode<T>) node.getLeft()) + size((BSTNode<T>) node.getRight());
 		}
 		return result;
 	}
